@@ -1,34 +1,33 @@
-
 import javax.swing.*;
 import java.awt.*;
 
 public class QueueStatusScreen extends JFrame {
-    private JLabel nameLabel;
-    private JLabel waitingTimeLabel;
-    private JLabel customersAheadLabel;
+    private JTextField customerNameField;
+    private JTextField waitingTimeField;
+    private JTextField customersAheadField;
 
     public QueueStatusScreen() {
+        setSize(300, 300);
         setTitle("Queue Status");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(400, 300);
-        setLayout(new FlowLayout());
+        setLayout(new GridLayout(3, 2));
 
-        nameLabel = new JLabel("Name: ");
-        waitingTimeLabel = new JLabel("Waiting Time: ");
-        customersAheadLabel = new JLabel("Customers Ahead: ");
+        add(new JLabel("Customer Name:"));
+        customerNameField = new JTextField();
+        add(customerNameField);
 
-        add(nameLabel);
-        add(waitingTimeLabel);
-        add(customersAheadLabel);
+        add(new JLabel("Waiting Time:"));
+        waitingTimeField = new JTextField();
+        add(waitingTimeField);
 
-        setVisible(true);
+        add(new JLabel("Customers Ahead:"));
+        customersAheadField = new JTextField();
+        add(customersAheadField);
     }
 
     public void updateQueueStatus(String name, int waitingTime, int customersAhead) {
-        nameLabel.setText("Name: " + name);
-        waitingTimeLabel.setText("Waiting Time: " + waitingTime + " minutes");
-        customersAheadLabel.setText("Customers Ahead: " + customersAhead);
+        customerNameField.setText(name);
+        waitingTimeField.setText(String.valueOf(waitingTime));
+        customersAheadField.setText(String.valueOf(customersAhead));
     }
 }
-
-
