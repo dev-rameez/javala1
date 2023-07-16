@@ -5,7 +5,7 @@ public class QueueManager {
     private Queue<String> queue;
 
     public QueueManager() {
-        queue = new LinkedList<>();
+        queue = new LinkedList<String>();
     }
 
     public void addCustomer(String name) {
