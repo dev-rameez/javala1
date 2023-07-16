@@ -20,7 +20,7 @@ public class QueueDisplayApp {
     
         public static void main(String[] args) {
             QueueDisplayApp app = new QueueDisplayApp();
-    
+            
             // Perform periodic updates every 1 minute (adjust the interval as needed)
             while (true) {
                 app.updateQueueStatusScreen();
